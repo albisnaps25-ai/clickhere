@@ -712,7 +712,7 @@
             "https://via.placeholder.com/150x150/c44569/ffffff?text=Foto+2", 
             "https://via.placeholder.com/150x150/f8b500/ffffff?text=Foto+3"
           ],
-          unlockUrl: "https://www.instagram.com"
+          unlockUrl: "https://example.com/unlock-photos"
         },
         videos: {
           title: "🎥 Koleksioni i Videove",
@@ -720,7 +720,7 @@
             "https://via.placeholder.com/150x150/636e72/ffffff?text=Video+1",
             "https://via.placeholder.com/150x150/2d3436/ffffff?text=Video+2"
           ],
-          unlockUrl: "https://www.instagram.com"
+          unlockUrl: "https://example.com/unlock-videos"
         }
       };
       
@@ -751,9 +751,12 @@
       unlockBtn.className = "popup-unlock-btn";
       unlockBtn.textContent = type === 'photos' ? '🔓 Shkyç Fotot' : '🔓 Shkyç Videot';
       unlockBtn.onclick = () => {
-        // Hap direkt Instagram pa shfaqur popup
-        window.open('https://www.instagram.com', '_blank');
-        document.getElementById("statsPopup").style.display = "none";
+        const itemType = type === 'photos' ? 'fotot' : 'videot';
+        showLinkPopup(
+          data.unlockUrl,
+          `🔓 Shkyç të gjitha ${itemType}`,
+          `Ky link do t'ju drejtojë në faqen e pagesës për të shkyçur të gjitha ${itemType}. A doni të vazhdoni?`
+        );
       };
       statsGrid.appendChild(unlockBtn);
       
@@ -787,7 +790,7 @@
         document.getElementById("buttonPopup").style.display = "none";
       };
 
-      document.getElementById("buttonActionBtn").onclick = () {
+      document.getElementById("buttonActionBtn").onclick = () => {
         const url = document.getElementById("buttonActionBtn").getAttribute("data-url");
         const buttonText = document.getElementById("buttonActionBtn").textContent;
         showLinkPopup(
@@ -837,7 +840,7 @@
         }
       };
       
-      // Close stats popup
+      // Close stats popup - UPDATED: Removed the closeStatsBtn reference
       document.getElementById("closeStatsIcon").onclick = () => {
         document.getElementById("statsPopup").style.display = "none";
       };
