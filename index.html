@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile Page with Logo Header</title>
   <style>
-   .header {
+  .header {
   position: fixed;
   top: 0;
   left: 50%;
@@ -24,10 +24,17 @@
   z-index: 1000;
 }
 
-/* Logo image left */
+/* Logo image always left */
 .logo-left {
   display: flex;
   align-items: center;
+}
+
+/* Text forced to the center */
+.logo-center {
+  position: absolute;   /* vendoset mbi header */
+  left: 50%;            /* gjysma e header-it */
+  transform: translateX(-50%); /* zhvendos teksti fiks në qendër */
 }
 
 .logo-img {
@@ -35,13 +42,6 @@
   width: 45px;
   border-radius: 8px;
   object-fit: cover;
-}
-
-/* Text centered absolutely */
-.logo-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .logo-text {
