@@ -3,13 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Page</title>
+  <title>Profile Page with Header</title>
   <style>
+    /* New header styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo-img {
+      height: 40px;
+      width: 40px;
+      border-radius: 8px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+      color: #6a11cb;
+    }
+    
+    .logo-text {
+      color: white;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: white;
+    }
+    
+    /* Adjust body to account for fixed header */
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       background: #f5f5f5;
       margin: 0;
-      padding: 0;
+      padding: 70px 0 0 0; /* Added top padding for fixed header */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -24,6 +83,7 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       text-align: center;
       position: relative;
+      margin-top: 20px; /* Added margin for better spacing */
     }
 
     /* Banner */
@@ -119,7 +179,6 @@
     .banner-ad {
       width: 100%;
       margin: 20px 0;
-      /* Changed cursor to default to indicate it's not clickable */
       cursor: default;
     }
 
@@ -129,7 +188,6 @@
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      /* Removed the hover effect transition */
     }
 
     /* Buttons */
@@ -336,7 +394,7 @@
       padding: 10px 20px;
       font-size: 14px;
       font-weight: 500;
-      border: nothing;
+      border: none;
       border-radius: 25px;
       background: #ff4d4d;
       color: #fff;
@@ -433,6 +491,20 @@
   </style>
 </head>
 <body>
+  <!-- New Header -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-img">N</div>
+      <div class="logo-text">NiaProfile</div>
+    </div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Discover</a>
+      <a href="#">Messages</a>
+      <a href="#">Notifications</a>
+    </nav>
+  </header>
+
   <div class="profile-card">
     <!-- Banner -->
     <div class="cover" id="bannerArea">
@@ -805,11 +877,6 @@
       document.getElementById("unlockBtn").onclick = () => {
         showLinkPopup("https://example.com/unlock","🔓 Shkyç të Gjitha","Ky link do t'ju drejtojë në faqen e pagesës për të shkyçur të gjitha fotot. A doni të vazhdoni?");
       };
-      
-      // REMOVED: Banner ad click event handler
-      // document.getElementById("bannerAdImage").onclick = () => {
-      //   showLinkPopup("https://example.com/banner-image","📢 Reklamë","Ky link ju drejton në një ofertë speciale. A doni të vazhdoni?");
-      // };
       
       // Photos
       document.getElementById("photo1").onclick = () => {
