@@ -5,21 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile Page with Logo Header</title>
   <style>
-   .header {
+   /* HEADER */
+.header {
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 450px; /* Match profile card width */
+  width: 450px; /* e njëjtë me profile card */
   height: 70px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
-  align-items: center;      /* vendos elementet në qendër vertikalisht */
-  justify-content: flex-start; /* LOGO majtas */
-  padding-left: 16px;       /* distanca e vogël nga buza majtas */
-  padding-right: 20px;      /* ruaj pak hapësirë djathtas */
+  align-items: center;      
+  justify-content: flex-start; 
+  padding-left: 25px;   /* më shumë largësi nga buza majtas */
+  padding-right: 20px;
   border-radius: 0 0 12px 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -28,7 +29,7 @@
 
 .logo {
   display: flex;
-  align-items: center;  /* imazhi + teksti në një vijë */
+  align-items: center;
   gap: 10px;
 }
 
@@ -46,7 +47,19 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-    
+/* PROFILE CARD */
+.profile-card {
+  position: relative;
+  top: 100px; /* hapësirë poshtë header-it */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450px;    /* i njëjtë me header-in */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
     /* Adjust body to account for fixed header */
     body {
       font-family: "Segoe UI", Arial, sans-serif;
