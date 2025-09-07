@@ -47,19 +47,21 @@
 }
 
 .logo-text {
-/* heqim color: #333; */
-font-size: 22px;
-font-weight: 700;
-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-size: 22px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
 }
 
-.logo-text .only {
-color: #1e90ff; /* light blue */
+.only-text {
+  color: #1e90ff; /* Blu e hapur */
 }
 
-.logo-text .fans {
-color: #00008b; /* dark blue */
+.fans-text {
+  color: #00008b; /* Blu e errët */
 }
+
 /* 📱 Responsive adjustments */
 @media (max-width: 600px) {
   .logo-img {
@@ -506,14 +508,11 @@ color: #00008b; /* dark blue */
   </style>
 </head>
 <body>
-    <!-- Updated Header -->
+  <!-- Updated Header -->
   <header class="header">
     <img src="logo.png" alt="OnlyFans Logo" class="logo-img">
     <div class="logo-center">
-      <div class="logo-text">
-        <span class="only-text">only</span>
-        <span class="fans-text">fans</span>
-      </div>
+      <div class="logo-text"><span class="only-text">only</span><span class="fans-text">fans</span></div>
     </div>
   </header>
 
