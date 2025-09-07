@@ -17,7 +17,6 @@
   -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
-  justify-content: space-between; /* image left, text right */
   padding: 0 20px;
   border-radius: 0 0 12px 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -25,11 +24,24 @@
   z-index: 1000;
 }
 
+/* Logo image left */
+.logo-left {
+  display: flex;
+  align-items: center;
+}
+
 .logo-img {
   height: 45px;
   width: 45px;
   border-radius: 8px;
   object-fit: cover;
+}
+
+/* Text centered absolutely */
+.logo-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .logo-text {
