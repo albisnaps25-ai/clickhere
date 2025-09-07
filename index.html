@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Page with Header</title>
+  <title>Profile Page with Logo Header</title>
   <style>
     /* New header styles */
     .header {
@@ -28,16 +28,10 @@
     }
     
     .logo-img {
-      height: 40px;
-      width: 40px;
+      height: 45px;
+      width: 45px;
       border-radius: 8px;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 20px;
-      color: #6a11cb;
+      object-fit: cover;
     }
     
     .logo-text {
@@ -494,7 +488,7 @@
   <!-- New Header -->
   <header class="header">
     <div class="logo">
-      <div class="logo-img">N</div>
+      <img src="logo.png" alt="NiaProfile Logo" class="logo-img">
       <div class="logo-text">NiaProfile</div>
     </div>
     <nav class="nav-links">
