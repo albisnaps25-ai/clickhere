@@ -5,50 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile Page with Logo Header</title>
   <style>
-    /* Updated header styles */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 450px; /* Match profile card width */
-      height: 70px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      display: flex;
-      /* align-items: center;*/
-      justify-content: center;
-      padding: 0 20px;
-      border-radius: 0 0 12px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-    }
-    
-    .logo {
-      display: flex;
-      /* align-items: center; */
-      gap: 12px;
-    }
-    
-    .logo-img {
-      height: 45px;
-      width: 45px;
-      border-radius: 8px;
-      object-fit: cover;
-      align-items: left;
-      float: left; /* Zhvendos imazhin në majtas */
-      margin-right: 20px; /* Opsionale: shto hapësirë djathtas për tekstin pranë */
-      
-    }
-    
-    .logo-text {
-      color: #333;
-      font-size: 22px;
-      font-weight: 700;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    }
+   .header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450px; /* Match profile card width */
+  height: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;      /* vendos elementet në qendër vertikalisht */
+  justify-content: flex-start; /* LOGO majtas */
+  padding-left: 12px;       /* distanca e vogël nga buza majtas */
+  padding-right: 20px;      /* ruaj pak hapësirë djathtas */
+  border-radius: 0 0 12px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;  /* imazhi + teksti në një vijë */
+  gap: 10px;
+}
+
+.logo-img {
+  height: 45px;
+  width: 45px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.logo-text {
+  color: #333;
+  font-size: 22px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
     
     /* Adjust body to account for fixed header */
     body {
