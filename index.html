@@ -10,31 +10,25 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 450px;
+  width: 100%;              /* përdor gjithë gjerësinë në mobile */
+  max-width: 450px;         /* por mos e kalon këtë në desktop */
   height: 70px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 15px;
   border-radius: 0 0 12px 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
-/* Logo image always left */
+/* Logo image majtas */
 .logo-left {
   display: flex;
   align-items: center;
-}
-
-/* Text forced to the center */
-.logo-center {
-  position: absolute;   /* vendoset mbi header */
-  left: 50%;            /* gjysma e header-it */
-  transform: translateX(-50%); /* zhvendos teksti fiks në qendër */
 }
 
 .logo-img {
@@ -44,6 +38,14 @@
   object-fit: cover;
 }
 
+/* Teksti gjithmonë qendër absolute */
+.logo-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
 .logo-text {
   color: #333;
   font-size: 22px;
@@ -51,6 +53,22 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* 📱 Responsive adjustments */
+@media (max-width: 600px) {
+  .logo-img {
+    height: 35px;
+    width: 35px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .header {
+    height: 60px;
+    padding: 0 10px;
+  }
+}
 
 
     /* Adjust body to account for fixed header */
