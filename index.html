@@ -578,15 +578,13 @@
     </div>
   </div>
 
-  <!-- Stats Popup -->
+  <!-- Stats Popup - UPDATED: Removed the close button from the bottom -->
   <div class="popup-overlay stats-popup" id="statsPopup">
     <div class="popup">
       <div class="close-icon" id="closeStatsIcon">×</div>
       <div class="popup-header" id="statsTitle">Statistikat</div>
       <div class="stats-grid" id="statsGrid"></div>
-      <div class="popup-buttons">
-        <button class="popup-btn btn-cancel" id="closeStatsBtn">Mbyll</button>
-      </div>
+      <!-- Removed the close button div here -->
     </div>
   </div>
 
@@ -842,10 +840,7 @@
         }
       };
       
-      // Close stats popup
-      document.getElementById("closeStatsBtn").onclick = () => {
-        document.getElementById("statsPopup").style.display = "none";
-      };
+      // Close stats popup - UPDATED: Removed the closeStatsBtn reference
       document.getElementById("closeStatsIcon").onclick = () => {
         document.getElementById("statsPopup").style.display = "none";
       };
