@@ -1,16 +1,16 @@
 // profileData.js
 
 const profileData = {
-  name: "Nia Aliyah", // Change for new creator
+  name: "NMia Khali", // Change for new creator
   verified: true,
-  handle: "@alitah",
+  handle: "@kali",
   status: "Available now",
   avatar: "v1_4.png",
   cover: "v4_144.png",
   bannerAd: "https://via.placeholder.com/400x90/ff6b6b/ffffff?text=Banner+Ad",
-  photoCount: 546,
-  videoCount: 362,
-  likes: "5k",
+  photoCount: 522,
+  videoCount: 312,
+  likes: "9.1k",
   bioBullets: [
     "Exclusive personalized content",
     "Direct and continuous interaction",
