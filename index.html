@@ -3,95 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Page with Logo Header</title>
+  <title>Creator Profile</title>
   <style>
-  .header {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;              /* përdor gjithë gjerësinë në mobile */
-  max-width: 450px;         /* por mos e kalon këtë në desktop */
-  height: 70px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  padding: 0 15px;
-  border-radius: 0 0 12px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-/* Logo image majtas */
-.logo-left {
-  display: flex;
-  align-items: center;
-}
-
-.logo-img {
-  height: 45px;
-  width: 45px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-/* Teksti gjithmonë qendër absolute */
-.logo-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.logo-text {
-  color: #333;
-  font-size: 22px;
-  font-weight: 700;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  display: flex;
-}
-
-.only-text {
-  color: #00b0f1; /* Blu e hapur */
-}
-
-.fans-text {
-  color: #008acf; /* Blu e errët */
-}
-
-/* 📱 Responsive adjustments */
-@media (max-width: 600px) {
-  .logo-img {
-    height: 35px;
-    width: 35px;
-  }
-
-  .logo-text {
-    font-size: 18px;
-  }
-
-  .header {
-    height: 60px;
-    padding: 0 10px;
-  }
-}
-
-
-    /* Adjust body to account for fixed header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 450px;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      border-radius: 0 0 12px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .logo-img {
+      height: 45px;
+      width: 45px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .logo-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+    .logo-text {
+      color: #333;
+      font-size: 22px;
+      font-weight: 700;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      display: flex;
+    }
+    .only-text { color: #00b0f1; }
+    .fans-text { color: #008acf; }
+    @media (max-width: 600px) {
+      .logo-img { height: 35px; width: 35px; }
+      .logo-text { font-size: 18px; }
+      .header { height: 60px; padding: 0 10px; }
+    }
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       background: #f5f5f5;
       margin: 0;
-      padding: 70px 0 0 0; /* Added top padding for fixed header */
+      padding: 70px 0 0 0;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
     }
-
     .profile-card {
       background: #fff;
       width: 450px;
@@ -100,18 +68,14 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       text-align: center;
       position: relative;
-      margin: 0; /* Added small margin for spacing from header */
+      margin: 0;
     }
-
-    /* Banner */
     .cover {
-      background: url('v4_144.png') center/cover no-repeat;
+      background: #ccc center/cover no-repeat;
       height: 160px;
       position: relative;
       cursor: pointer;
     }
-
-    /* Profile picture */
     .avatar {
       width: 120px;
       height: 120px;
@@ -124,12 +88,9 @@
       object-fit: cover;
       cursor: pointer;
     }
-
     .content {
       padding: 80px 20px 30px;
     }
-
-    /* Name + Verified */
     .name {
       font-size: 22px;
       font-weight: 600;
@@ -138,13 +99,10 @@
       align-items: center;
       gap: 6px;
     }
-
     .verified {
       color: #1da1f2;
       font-size: 18px;
     }
-
-    /* Stats */
     .stats {
       margin: 12px 0;
       font-size: 14px;
@@ -153,7 +111,6 @@
       justify-content: center;
       gap: 20px;
     }
-
     .stats span {
       display: flex;
       align-items: center;
@@ -163,18 +120,24 @@
       border-radius: 15px;
       transition: background-color 0.3s;
     }
-
     .stats span:hover {
       background-color: #f0f0f0;
     }
-
-    /* Handle + status */
+    .blue-link {
+      color: #008acf;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      cursor: pointer;
+    }
+    .blue-link:hover {
+      color: #005c99;
+      background-color: #f0f9ff;
+    }
     .handle {
       font-size: 15px;
       color: #555;
       margin-top: 5px;
     }
-
     .status {
       display: inline-flex;
       align-items: center;
@@ -183,7 +146,6 @@
       font-weight: 500;
       color: #333;
     }
-
     .dot {
       width: 10px;
       height: 10px;
@@ -191,14 +153,11 @@
       border-radius: 50%;
       display: inline-block;
     }
-
-    /* Banner Ad */
     .banner-ad {
       width: 100%;
       margin: 20px 0;
       cursor: default;
     }
-
     .banner-ad img {
       width: 100%;
       height: 90px;
@@ -206,12 +165,9 @@
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
-    /* Buttons */
     .buttons {
       margin-top: 15px;
     }
-
     .buttons button {
       display: flex;
       justify-content: center;
@@ -229,24 +185,19 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
     .buttons button:hover {
       background: #0088cc;
     }
-
-    /* Photo Grid */
     .photo-grid-wrapper {
       position: relative;
       margin-top: 20px;
       padding: 0 10px;
     }
-
     .photo-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 8px;
     }
-
     .photo-grid img,
     .stats-grid img {
       width: 100%;
@@ -257,14 +208,11 @@
       transition: all 0.3s;
       cursor: pointer;
     }
-
     .photo-grid img:hover,
     .stats-grid img:hover {
       filter: blur(0.8px) brightness(1);
       box-shadow: 0 0 8px rgba(0,0,0,0.2);
     }
-
-    /* Unlock Button floating over photos */
     .unlock-btn {
       position: absolute;
       top: 50%;
@@ -281,12 +229,9 @@
       transition: background 0.3s;
       z-index: 2;
     }
-
     .unlock-btn:hover {
       background: #cc0000;
     }
-
-    /* Popup Styles */
     .popup-overlay {
       position: fixed;
       top: 0;
@@ -299,7 +244,6 @@
       align-items: center;
       z-index: 1000;
     }
-
     .popup {
       background: #fff;
       padding: 20px;
@@ -311,7 +255,6 @@
       animation: popupAppear 0.25s ease-out;
       position: relative;
     }
-
     @keyframes popupAppear {
       from {
         opacity: 0;
@@ -322,56 +265,71 @@
         transform: scale(1);
       }
     }
-
     .popup-header {
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 12px;
       color: #333;
     }
-
-    .popup-content {
-      font-size: 15px;
-      line-height: 1.5;
+    .popup-title {
+      font-size: 16px;
       color: #666;
       margin-bottom: 20px;
+      font-weight: normal;
+      text-align: center;
     }
-
-    .popup-buttons {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
+    .bullet-points {
+      margin: 20px 0;
+      padding-left: 0;
     }
-
-    .popup-btn {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 25px;
+    .bullet-points li {
+      list-style: none;
+      padding: 8px 0;
       font-size: 15px;
-      font-weight: 500;
+      color: #444;
+      position: relative;
+      padding-left: 25px;
+    }
+    .bullet-points li:before {
+      content: "•";
+      color: #00aaff;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 18px;
+    }
+    .popup-banner-ad {
+      margin: 20px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .popup-banner-ad img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .popup-banner-ad img:hover {
+      transform: scale(1.05);
+    }
+    .popup-action-btn {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
       cursor: pointer;
       transition: all 0.3s;
+      margin-top: 15px;
     }
-
-    .btn-confirm {
-      background: #00aaff;
-      color: #fff;
+    .popup-action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
     }
-
-    .btn-confirm:hover {
-      background: #0088cc;
-    }
-
-    .btn-cancel {
-      background: #ff4d4d;
-      color: #fff;
-    }
-
-    .btn-cancel:hover {
-      background: #cc0000;
-    }
-
-    /* Close Icon */
     .close-icon {
       position: absolute;
       top: 10px;
@@ -382,18 +340,14 @@
       cursor: pointer;
       transition: color 0.2s;
     }
-
     .close-icon:hover {
       color: #000;
     }
-
-    /* Stats Popup */
     .stats-popup .popup {
       max-width: 400px;
       max-height: 90vh;
       overflow-y: auto;
     }
-
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -401,8 +355,6 @@
       margin: 20px 0;
       position: relative;
     }
-
-    /* Unlock button in popup */
     .popup-unlock-btn {
       position: absolute;
       top: 50%;
@@ -419,264 +371,183 @@
       transition: background 0.3s;
       z-index: 2;
     }
-
     .popup-unlock-btn:hover {
       background: #cc0000;
-    }
-
-    /* Profile Info Popup Styles */
-    .profile-popup .popup {
-      max-width: 450px;
-      width: 90%;
-      text-align: left;
-    }
-
-    .profile-popup .popup-header {
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .profile-popup .popup-title {
-      text-align: center;
-      font-size: 16px;
-      color: #666;
-      margin-bottom: 20px;
-      font-weight: normal;
-    }
-
-    .profile-popup .bullet-points {
-      margin: 20px 0;
-      padding-left: 0;
-    }
-
-    .profile-popup .bullet-points li {
-      list-style: none;
-      padding: 8px 0;
-      font-size: 15px;
-      color: #444;
-      position: relative;
-      padding-left: 25px;
-    }
-
-    .profile-popup .bullet-points li:before {
-      content: "•";
-      color: #00aaff;
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-      font-size: 18px;
-    }
-
-    .profile-popup .popup-banner-ad {
-      margin: 20px 0;
-      border-radius: 8px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .profile-popup .popup-banner-ad img {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-
-    .profile-popup .popup-banner-ad img:hover {
-      transform: scale(1.05);
-    }
-
-    .profile-popup .popup-action-btn {
-      width: 100%;
-      padding: 15px;
-      font-size: 16px;
-      font-weight: 600;
-      border: none;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #fff;
-      cursor: pointer;
-      transition: all 0.3s;
-      margin-top: 15px;
-    }
-
-    .profile-popup .popup-action-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
     }
   </style>
 </head>
 <body>
-  <!-- Updated Header -->
   <header class="header">
-    <img src="logo.png" alt="OnlyFans Logo" class="logo-img">
+    <img src="logo.png" alt="Logo" class="logo-img">
     <div class="logo-center">
       <div class="logo-text"><span class="only-text">Only</span><span class="fans-text">Fans</span></div>
     </div>
   </header>
-
   <div class="profile-card">
-    <!-- Banner -->
     <div class="cover" id="bannerArea">
-      <img src="v1_4.png" alt="Avatar" class="avatar" id="profilePicture">
+      <img alt="Avatar" class="avatar" id="profilePicture">
     </div>
-
-    <!-- Content -->
     <div class="content">
-      <div class="name">
-        Nia Aliyah 
-        <span class="verified">✓</span>
-      </div>
-
+      <div class="name"></div>
       <div class="stats">
-        <span id="photoStats">📷 546 photos</span>
-        <span id="videoStats">🎥 362 videos</span>
-        <span>❤️ 5k</span>
+        <span id="photoStats" class="blue-link"></span>
+        <span id="videoStats" class="blue-link"></span>
+        <span id="likes"></span>
       </div>
-
-      <div class="handle">
-        @alitah 
-        <span class="status"><span class="dot"></span> Available now</span>
-      </div>
-
-      <!-- Banner Ad -->
+      <div class="handle"></div>
       <div class="banner-ad" id="bannerAdImage">
-        <img src="https://via.placeholder.com/400x90/ff6b6b/ffffff?text=Banner+Ad" alt="Banner Ad">
+        <img alt="Banner Ad">
       </div>
-
-      <!-- Buttons -->
       <div class="buttons">
         <button id="explicitBtn">🔞 Explicit Content</button>
         <button id="livestreamBtn">👁️ +18 Livestream</button>
       </div>
-
-      <!-- Photo Grid with floating Unlock button -->
       <div class="photo-grid-wrapper">
-        <div class="photo-grid">
-          <img id="photo1" src="https://via.placeholder.com/150x150/ff9ff3/ffffff?text=Photo+1" alt="Photo 1">
-          <img id="photo2" src="https://via.placeholder.com/150x150/54a0ff/ffffff?text=Photo+2" alt="Photo 2">
-          <img id="photo3" src="https://via.placeholder.com/150x150/5f27cd/ffffff?text=Photo+3" alt="Photo 3">
-        </div>
+        <div class="photo-grid" id="mainPhotoGrid"></div>
         <button class="unlock-btn" id="unlockBtn">🔓 Unlock All</button>
       </div>
     </div>
   </div>
-
-  <!-- Link Confirmation Popup -->
-  <div class="popup-overlay" id="linkPopup">
-    <div class="popup">
-      <div class="close-icon" id="popupClose">×</div>
-      <div class="popup-header" id="popupTitle">Konfirmo Veprimin</div>
-      <div class="popup-content" id="popupMessage">
-        A jeni të sigurt që doni të vazhdoni në këtë link?
-      </div>
-      <div class="popup-buttons">
-        <button class="popup-btn btn-confirm" id="confirmBtn">Po, Vazhdo</button>
-        <button class="popup-btn btn-cancel" id="cancelBtn">Mbyll</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Stats Popup - UPDATED: Removed the close button from the bottom -->
+  <!-- Stats Popup -->
   <div class="popup-overlay stats-popup" id="statsPopup">
     <div class="popup">
       <div class="close-icon" id="closeStatsIcon">×</div>
-      <div class="popup-header" id="statsTitle">Statistikat</div>
+      <div class="popup-header" id="statsTitle"></div>
       <div class="stats-grid" id="statsGrid"></div>
-      <!-- Removed the close button div here -->
     </div>
   </div>
-
   <!-- Profile Info Popup -->
   <div class="popup-overlay profile-popup" id="profilePopup">
     <div class="popup">
       <div class="close-icon" id="closeProfileIcon">×</div>
-      <div class="popup-header">Nia Aliyah</div>
+      <div class="popup-header" id="creatorName"></div>
       <div class="popup-title">Premium Content Creator</div>
-      
-      <ul class="bullet-points">
-        <li>Ekskluzive përmbajtje të personalizuara</li>
-        <li>Interaksion direkt dhe i vazhdueshëm</li>
-        <li>Përditësime të rregullta me material të ri</li>
-      </ul>
-
+      <ul class="bullet-points" id="bioBullets"></ul>
       <div class="popup-banner-ad" id="profilePopupBanner">
-        <img src="https://via.placeholder.com/400x100/764ba2/ffffff?text=Special+Offer+50%25+OFF" alt="Special Banner">
+        <img id="profileBannerImg" alt="Special Banner">
       </div>
-
-      <button class="popup-action-btn" id="profileActionBtn">🎯 Shiko Ofertën Speciale</button>
+      <button class="popup-action-btn" id="profileActionBtn">🎯 View Special Offer</button>
     </div>
   </div>
-
   <!-- Button Info Popup -->
   <div class="popup-overlay profile-popup" id="buttonPopup">
     <div class="popup">
       <div class="close-icon" id="closeButtonIcon">×</div>
       <div class="popup-header" id="buttonPopupHeader">Button Title</div>
       <div class="popup-title" id="buttonPopupTitle">Button Subtitle</div>
-      
       <ul class="bullet-points" id="buttonBulletPoints">
         <li>Sample bullet point 1</li>
         <li>Sample bullet point 2</li>
         <li>Sample bullet point 3</li>
       </ul>
-
       <div class="popup-banner-ad" id="buttonPopupBanner">
-        <img id="buttonPopupBannerImg" src="https://via.placeholder.com/400x100/ff4444/ffffff?text=Banner" alt="Button Banner">
+        <img id="buttonPopupBannerImg" alt="Button Banner">
       </div>
-
       <button class="popup-action-btn" id="buttonActionBtn">🎯 Action Button</button>
     </div>
   </div>
-
-  <!-- JavaScript Link -->
   <script>
-    let targetUrl = ""; // Store which link to open
+    // ---- PROFILE DATA OBJECT ----
+    const profileData = {
+      name: "Nia Aliyah", // Change for new creator
+      verified: true,
+      handle: "@alitah",
+      status: "Available now",
+      avatar: "v1_4.png",
+      cover: "v4_144.png",
+      bannerAd: "https://via.placeholder.com/400x90/ff6b6b/ffffff?text=Banner+Ad",
+      photoCount: 546,
+      videoCount: 362,
+      likes: "5k",
+      bioBullets: [
+        "Exclusive personalized content",
+        "Direct and continuous interaction",
+        "Regular updates with new material"
+      ],
+      offerBanner: "https://via.placeholder.com/400x100/764ba2/ffffff?text=Special+Offer+50%25+OFF",
+      mainPhotos: [
+        {src: "https://via.placeholder.com/150x150/ff9ff3/ffffff?text=Photo+1", url: "https://example.com/photo1"},
+        {src: "https://via.placeholder.com/150x150/54a0ff/ffffff?text=Photo+2", url: "https://example.com/photo2"},
+        {src: "https://via.placeholder.com/150x150/5f27cd/ffffff?text=Photo+3", url: "https://example.com/photo3"}
+      ],
+      statsPhotos: [
+        "https://via.placeholder.com/150x150/ff6b9d/ffffff?text=Photo+1",
+        "https://via.placeholder.com/150x150/c44569/ffffff?text=Photo+2",
+        "https://via.placeholder.com/150x150/f8b500/ffffff?text=Photo+3"
+      ],
+      statsVideos: [
+        "https://via.placeholder.com/150x150/636e72/ffffff?text=Video+1",
+        "https://via.placeholder.com/150x150/2d3436/ffffff?text=Video+2",
+        "https://via.placeholder.com/150x150/636e72/ffffff?text=Video+3"
+      ]
+    };
+    // ---- END PROFILE DATA ----
 
-    function showLinkPopup(url, title, message) {
-      targetUrl = url;
-      document.getElementById("popupTitle").textContent = title;
-      document.getElementById("popupMessage").textContent = message;
-      document.getElementById("linkPopup").style.display = "flex";
+    function renderProfile() {
+      document.getElementById("profilePicture").src = profileData.avatar;
+      document.getElementById("profilePicture").alt = profileData.name + " Avatar";
+      document.getElementById("bannerArea").style.backgroundImage = `url('${profileData.cover}')`;
+      document.querySelector(".name").innerHTML = profileData.name + (profileData.verified ? ' <span class="verified">✓</span>' : '');
+      document.getElementById("photoStats").textContent = `📷 ${profileData.photoCount} photos`;
+      document.getElementById("videoStats").textContent = `🎥 ${profileData.videoCount} videos`;
+      document.getElementById("likes").textContent = `❤️ ${profileData.likes}`;
+      document.querySelector(".handle").innerHTML = profileData.handle + `<span class="status"><span class="dot"></span> ${profileData.status}</span>`;
+      document.getElementById("bannerAdImage").querySelector("img").src = profileData.bannerAd;
+      document.getElementById("creatorName").textContent = profileData.name;
+      document.getElementById("profileBannerImg").src = profileData.offerBanner;
+
+      // Bio bullets
+      const bioList = document.getElementById("bioBullets");
+      bioList.innerHTML = "";
+      profileData.bioBullets.forEach(bullet => {
+        const li = document.createElement("li");
+        li.textContent = bullet;
+        bioList.appendChild(li);
+      });
+
+      // Main photo grid
+      const mainGrid = document.getElementById("mainPhotoGrid");
+      mainGrid.innerHTML = "";
+      profileData.mainPhotos.forEach((photo, i) => {
+        const img = document.createElement("img");
+        img.src = photo.src;
+        img.alt = "Photo " + (i + 1);
+        img.className = "photo";
+        img.onclick = () => window.open(photo.url, '_blank');
+        mainGrid.appendChild(img);
+      });
     }
 
     function showButtonPopup(type) {
-      // Define different content for each button type
       const buttonData = {
         explicit: {
           name: "🔞 Explicit Content",
           title: "Premium Adult Content",
           bulletPoints: [
-            "Përmbajtje ekskluzive vetëm për të rritur",
-            "Material i kufizuar dhe i personalizuar", 
-            "Aksesi i plotë në koleksionin premium"
+            "Exclusive content for adults only",
+            "Limited and personalized material", 
+            "Full access to the premium collection"
           ],
           bannerUrl: "https://via.placeholder.com/400x100/ff4444/ffffff?text=Adult+Content+Warning",
-          actionText: "🔓 Shiko Përmbajtjen",
+          actionText: "🔓 View Content",
           finalUrl: "https://example.com/explicit-access"
         },
         livestream: {
           name: "👁️ +18 Livestream",
           title: "Live Interactive Sessions",
           bulletPoints: [
-            "Livestream në kohë reale 24/7",
-            "Interaksion direkt dhe privat",
-            "Sesione ekskluzive dhe të personalizuara"
+            "Real-time livestream 24/7",
+            "Direct and private interaction",
+            "Exclusive and personalized sessions"
           ],
           bannerUrl: "https://via.placeholder.com/400x100/764ba2/ffffff?text=Live+Now+-+Join+Stream",
-          actionText: "🎥 Bashkohu Tani",
+          actionText: "🎥 Join Now",
           finalUrl: "https://example.com/livestream-access"
         }
       };
-
       const data = buttonData[type];
-      
-      // Update popup content
       document.getElementById("buttonPopupHeader").textContent = data.name;
       document.getElementById("buttonPopupTitle").textContent = data.title;
-      
-      // Update bullet points
       const bulletList = document.getElementById("buttonBulletPoints");
       bulletList.innerHTML = "";
       data.bulletPoints.forEach(point => {
@@ -684,18 +555,10 @@
         li.textContent = point;
         bulletList.appendChild(li);
       });
-      
-      // Update banner
       document.getElementById("buttonPopupBannerImg").src = data.bannerUrl;
-      
-      // Update button text
       document.getElementById("buttonActionBtn").textContent = data.actionText;
-      
-      // Store the final URL for later use
       document.getElementById("buttonActionBtn").setAttribute("data-url", data.finalUrl);
       document.getElementById("buttonPopupBanner").setAttribute("data-url", data.finalUrl);
-      
-      // Show the popup
       document.getElementById("buttonPopup").style.display = "flex";
     }
 
@@ -706,197 +569,94 @@
     function showStatsPopup(type) {
       const statsData = {
         photos: {
-          title: "📷 Koleksioni i Fotove",
-          images: [
-            "https://via.placeholder.com/150x150/ff6b9d/ffffff?text=Foto+1",
-            "https://via.placeholder.com/150x150/c44569/ffffff?text=Foto+2", 
-            "https://via.placeholder.com/150x150/f8b500/ffffff?text=Foto+3"
-          ],
+          title: "📷 Photo Collection",
+          images: profileData.statsPhotos,
           unlockUrl: "https://example.com/unlock-photos"
         },
         videos: {
-          title: "🎥 Koleksioni i Videove",
-          images: [
-            "https://via.placeholder.com/150x150/636e72/ffffff?text=Video+1",
-            "https://via.placeholder.com/150x150/2d3436/ffffff?text=Video+2",
-            "https://via.placeholder.com/150x150/636e72/ffffff?text=Video+3"
-          ],
+          title: "🎥 Video Collection",
+          images: profileData.statsVideos,
           unlockUrl: "https://example.com/unlock-videos"
         }
       };
-      
       const data = statsData[type];
       document.getElementById("statsTitle").textContent = data.title;
-      
       const statsGrid = document.getElementById("statsGrid");
       statsGrid.innerHTML = "";
-      
-      // Create images
       data.images.forEach((imageSrc, index) => {
         const img = document.createElement("img");
         img.src = imageSrc;
         img.alt = `${type} ${index + 1}`;
         img.onclick = () => {
-          const itemType = type === 'photos' ? 'Foto' : 'Video';
-          showLinkPopup(
-            `https://example.com/${type}/${index + 1}`,
-            `📱 ${itemType} ${index + 1}`,
-            `Ky link ju drejton në versionin e plotë të kësaj ${itemType.toLowerCase()}je. A doni të vazhdoni?`
-          );
+          window.open(`https://example.com/${type}/${index + 1}`, '_blank');
         };
         statsGrid.appendChild(img);
       });
-      
-      // Create unlock button
       const unlockBtn = document.createElement("button");
       unlockBtn.className = "popup-unlock-btn";
-      unlockBtn.textContent = type === 'photos' ? '🔓 Shkyç Fotot' : '🔓 Shkyç Videot';
+      unlockBtn.textContent = type === 'photos' ? '🔓 Unlock Photos' : '🔓 Unlock Videos';
       unlockBtn.onclick = () => {
-        const itemType = type === 'photos' ? 'fotot' : 'videot';
-        showLinkPopup(
-          data.unlockUrl,
-          `🔓 Shkyç të gjitha ${itemType}`,
-          `Ky link do t'ju drejtojë në faqen e pagesës për të shkyçur të gjitha ${itemType}. A doni të vazhdoni?`
-        );
+        window.open(data.unlockUrl, '_blank');
       };
       statsGrid.appendChild(unlockBtn);
-      
       document.getElementById("statsPopup").style.display = "flex";
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-      // Profile picture and banner area clicks
+      renderProfile();
       document.getElementById("profilePicture").onclick = showProfilePopup;
       document.getElementById("bannerArea").onclick = showProfilePopup;
-
-      // Close profile popup
       document.getElementById("closeProfileIcon").onclick = () => {
         document.getElementById("profilePopup").style.display = "none";
       };
-
-      // Close button popup
       document.getElementById("closeButtonIcon").onclick = () => {
         document.getElementById("buttonPopup").style.display = "none";
       };
-
-      // Button popup banner and button actions
       document.getElementById("buttonPopupBanner").onclick = () => {
         const url = document.getElementById("buttonPopupBanner").getAttribute("data-url");
-        const buttonType = document.getElementById("buttonPopupHeader").textContent;
-        showLinkPopup(
-          url,
-          `${buttonType}`,
-          "Ky link ju drejton në një faqe të veçantë. A doni të vazhdoni?"
-        );
+        window.open(url, '_blank');
         document.getElementById("buttonPopup").style.display = "none";
       };
-
       document.getElementById("buttonActionBtn").onclick = () => {
         const url = document.getElementById("buttonActionBtn").getAttribute("data-url");
-        const buttonText = document.getElementById("buttonActionBtn").textContent;
-        showLinkPopup(
-          url,
-          `${buttonText}`,
-          "Ky link ju drejton në faqen e aksesit të plotë. A doni të vazhdoni?"
-        );
+        window.open(url, '_blank');
         document.getElementById("buttonPopup").style.display = "none";
       };
-
-      // Profile popup banner and button actions
       document.getElementById("profilePopupBanner").onclick = () => {
-        showLinkPopup(
-          "https://example.com/special-offer",
-          "🎯 Oferta Speciale",
-          "Ky link ju drejton në një ofertë të veçantë me 50% zbritje. A doni të vazhdoni?"
-        );
+        window.open("https://example.com/special-offer", '_blank');
         document.getElementById("profilePopup").style.display = "none";
       };
-
       document.getElementById("profileActionBtn").onclick = () => {
-        showLinkPopup(
-          "https://example.com/premium-access",
-          "🎯 Aksesi Premium",
-          "Ky link ju drejton në faqen e regjistrimit për akses të plotë. A doni të vazhdoni?"
-        );
+        window.open("https://example.com/premium-access", '_blank');
         document.getElementById("profilePopup").style.display = "none";
       };
-
-      // Close link popup
-      document.getElementById("cancelBtn").onclick = () => {
-        document.getElementById("linkPopup").style.display = "none";
-        targetUrl = "";
-      };
-
-      document.getElementById("popupClose").onclick = () => {
-        document.getElementById("linkPopup").style.display = "none";
-        targetUrl = "";
-      };
-      
-      // Confirm and go to link
-      document.getElementById("confirmBtn").onclick = () => {
-        if (targetUrl) {
-          window.open(targetUrl, '_blank');
-          document.getElementById("linkPopup").style.display = "none";
-          targetUrl = "";
-        }
-      };
-      
-      // Close stats popup - UPDATED: Removed the closeStatsBtn reference
       document.getElementById("closeStatsIcon").onclick = () => {
         document.getElementById("statsPopup").style.display = "none";
       };
-      
-      // Close popups when clicking overlay
-      document.getElementById("linkPopup").onclick = (e) => {
-        if (e.target.id === "linkPopup") {
-          document.getElementById("linkPopup").style.display = "none";
-          targetUrl = "";
-        }
-      };
-      
       document.getElementById("statsPopup").onclick = (e) => {
         if (e.target.id === "statsPopup") {
           document.getElementById("statsPopup").style.display = "none";
         }
       };
-
       document.getElementById("profilePopup").onclick = (e) => {
         if (e.target.id === "profilePopup") {
           document.getElementById("profilePopup").style.display = "none";
         }
       };
-
       document.getElementById("buttonPopup").onclick = (e) => {
         if (e.target.id === "buttonPopup") {
           document.getElementById("buttonPopup").style.display = "none";
         }
       };
-      
-      // Assign actions to existing elements
       document.getElementById("explicitBtn").onclick = () => {
         showButtonPopup("explicit");
       };
-      
       document.getElementById("livestreamBtn").onclick = () => {
         showButtonPopup("livestream");
       };
-      
       document.getElementById("unlockBtn").onclick = () => {
-        showLinkPopup("https://example.com/unlock","🔓 Shkyç të Gjitha","Ky link do t'ju drejtojë në faqen e pagesës për të shkyçur të gjitha fotot. A doni të vazhdoni?");
+        window.open("https://example.com/unlock", '_blank');
       };
-      
-      // Photos
-      document.getElementById("photo1").onclick = () => {
-        showLinkPopup("https://example.com/photo1","📷 Foto 1","Ky link ju drejton në versionin e plotë të kësaj fotoje. A doni të vazhdoni?");
-      };
-      document.getElementById("photo2").onclick = () => {
-        showLinkPopup("https://example.com/photo2","📷 Foto 2","Ky link ju drejton në versionin e plotë të kësaj fotoje. A doni të vazhdoni?");
-      };
-      document.getElementById("photo3").onclick = () => {
-        showLinkPopup("https://example.com/photo3","📷 Foto 3","Ky link ju drejton në versionin e plotë të kësaj fotoje. A doni të vazhdoni?");
-      };
-      
-      // Stats
       document.getElementById("photoStats").onclick = () => { showStatsPopup("photos"); };
       document.getElementById("videoStats").onclick = () => { showStatsPopup("videos"); };
     });
