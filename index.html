@@ -406,7 +406,6 @@
       </div>
       <div class="handle"></div>
       <div class="banner-ad" id="bannerAdImage">
-        <!-- ROTATING TWO GIFS IN SAME PLACE -->
         <a href="https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN"
            target="_blank">
           <img id="rotatingBanner" src="https://www.imglnkx.com/8780/PMKT-1157_DESIGN-16618_BannersWebinar_AmyPose_300100.gif"
@@ -423,7 +422,6 @@
       </div>
     </div>
   </div>
-  <!-- Stats Popup -->
   <div class="popup-overlay stats-popup" id="statsPopup">
     <div class="popup">
       <div class="close-icon" id="closeStatsIcon">×</div>
@@ -431,7 +429,6 @@
       <div class="stats-grid" id="statsGrid"></div>
     </div>
   </div>
-  <!-- Profile Info Popup -->
   <div class="popup-overlay profile-popup" id="profilePopup">
     <div class="popup">
       <div class="close-icon" id="closeProfileIcon">×</div>
@@ -439,7 +436,6 @@
       <div class="popup-title">Premium Content Creator</div>
       <ul class="bullet-points" id="bioBullets"></ul>
       <div class="popup-banner-ad" id="profilePopupBanner">
-        <!-- ROTATING TWO GIFS IN SAME PLACE -->
         <a href="https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN"
            target="_blank">
           <img id="rotatingBannerPopup" src="https://www.imglnkx.com/8780/PMKT-1157_DESIGN-16618_BannersWebinar_AmyPose_300100.gif"
@@ -449,7 +445,6 @@
       <button class="popup-action-btn" id="profileActionBtn">🎯 View Special Offer</button>
     </div>
   </div>
-  <!-- Button Info Popup -->
   <div class="popup-overlay profile-popup" id="buttonPopup">
     <div class="popup">
       <div class="close-icon" id="closeButtonIcon">×</div>
@@ -461,7 +456,6 @@
         <li>Sample bullet point 3</li>
       </ul>
       <div class="popup-banner-ad" id="buttonPopupBanner">
-        <!-- ROTATING TWO GIFS IN SAME PLACE -->
         <a href="https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN"
            target="_blank">
           <img id="rotatingBannerButton" src="https://www.imglnkx.com/8780/PMKT-1157_DESIGN-16618_BannersWebinar_AmyPose_300100.gif"
@@ -472,11 +466,10 @@
     </div>
   </div>
   <script>
-    // ---- PROFILE DATA OBJECT ----
     const profileData = {
-      name: "mia khali",
+      name: "Lucy May",
       verified: true,
-      handle: "@kali",
+      handle: "@lucymay",
       status: "Available now",
       avatar: "v1_4.png",
       cover: "v4_144.png",
@@ -505,7 +498,7 @@
         "collectionv3.jpg"
       ]
     };
-    // ---- END PROFILE DATA ----
+    const mainLink = "https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN";
 
     // Banner rotator logic for main banner
     const banners = [
@@ -552,12 +545,12 @@
         bioList.appendChild(li);
       });
 
-      // Main photo grid
+      // Main photo grid (all images lead to the main link)
       const mainGrid = document.getElementById("mainPhotoGrid");
       mainGrid.innerHTML = "";
       profileData.mainPhotos.forEach((photo, i) => {
         const a = document.createElement("a");
-        a.href = "https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN";
+        a.href = mainLink;
         a.target = "_blank";
         const img = document.createElement("img");
         img.src = photo.src;
@@ -569,7 +562,6 @@
     }
 
     function showButtonPopup(type) {
-      const link = "https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN";
       const buttonData = {
         explicit: {
           name: "🔞 Explicit Content",
@@ -579,9 +571,7 @@
             "Limited and personalized material",
             "Full access to the premium collection"
           ],
-          bannerUrl: banners[0],
-          actionText: "🔓 View Content",
-          finalUrl: link
+          actionText: "🔓 View Content"
         },
         livestream: {
           name: "👁️ +18 Livestream",
@@ -591,9 +581,7 @@
             "Direct and private interaction",
             "Exclusive and personalized sessions"
           ],
-          bannerUrl: banners[1],
-          actionText: "🎥 Join Now",
-          finalUrl: link
+          actionText: "🎥 Join Now"
         }
       };
       const data = buttonData[type];
@@ -607,8 +595,8 @@
         bulletList.appendChild(li);
       });
       document.getElementById("buttonActionBtn").textContent = data.actionText;
-      document.getElementById("buttonActionBtn").setAttribute("data-url", data.finalUrl);
-      document.getElementById("buttonPopupBanner").setAttribute("data-url", data.finalUrl);
+      document.getElementById("buttonActionBtn").setAttribute("data-url", mainLink);
+      document.getElementById("buttonPopupBanner").setAttribute("data-url", mainLink);
       document.getElementById("buttonPopup").style.display = "flex";
     }
 
@@ -617,17 +605,16 @@
     }
 
     function showStatsPopup(type) {
-      const link = "https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN";
       const statsData = {
         photos: {
           title: "📷 Photo Collection",
           images: profileData.statsPhotos,
-          unlockUrl: link
+          unlockUrl: mainLink
         },
         videos: {
           title: "🎥 Video Collection",
           images: profileData.statsVideos,
-          unlockUrl: link
+          unlockUrl: mainLink
         }
       };
       const data = statsData[type];
@@ -636,7 +623,7 @@
       statsGrid.innerHTML = "";
       data.images.forEach((imageSrc, index) => {
         const a = document.createElement("a");
-        a.href = link;
+        a.href = mainLink;
         a.target = "_blank";
         const img = document.createElement("img");
         img.src = imageSrc;
@@ -675,11 +662,11 @@
         document.getElementById("buttonPopup").style.display = "none";
       };
       document.getElementById("profilePopupBanner").onclick = () => {
-        window.open("https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN", '_blank');
+        window.open(mainLink, '_blank');
         document.getElementById("profilePopup").style.display = "none";
       };
       document.getElementById("profileActionBtn").onclick = () => {
-        window.open("https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN", '_blank');
+        window.open(mainLink, '_blank');
         document.getElementById("profilePopup").style.display = "none";
       };
       document.getElementById("closeStatsIcon").onclick = () => {
@@ -707,7 +694,7 @@
         showButtonPopup("livestream");
       };
       document.getElementById("unlockBtn").onclick = () => {
-        window.open("https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN", '_blank');
+        window.open(mainLink, '_blank');
       };
       document.getElementById("photoStats").onclick = () => { showStatsPopup("photos"); };
       document.getElementById("videoStats").onclick = () => { showStatsPopup("videos"); };
