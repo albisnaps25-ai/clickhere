@@ -474,7 +474,7 @@
   <script>
     // ---- PROFILE DATA OBJECT ----
     const profileData = {
-      name: "mia khali", // Change for new creator
+      name: "mia khali",
       verified: true,
       handle: "@kali",
       status: "Available now",
@@ -490,9 +490,9 @@
       ],
       offerBanner: "https://via.placeholder.com/400x100/764ba2/ffffff?text=Special+Offer+50%25+OFF",
       mainPhotos: [
-        {src: "photo1.jpg", url: "https://example.com/photo1"},
-        {src: "photo2.jpg", url: "https://example.com/photo2"},
-        {src: "photo3.jpg", url: "https://example.com/photo3"}
+        {src: "photo1.jpg"},
+        {src: "photo2.jpg"},
+        {src: "photo3.jpg"}
       ],
       statsPhotos: [
         "collectionph1.jpg",
@@ -504,7 +504,7 @@
         "collectionv2.jpg",
         "collectionv3.jpg"
       ]
-    }; 
+    };
     // ---- END PROFILE DATA ----
 
     // Banner rotator logic for main banner
@@ -556,28 +556,32 @@
       const mainGrid = document.getElementById("mainPhotoGrid");
       mainGrid.innerHTML = "";
       profileData.mainPhotos.forEach((photo, i) => {
+        const a = document.createElement("a");
+        a.href = "https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN";
+        a.target = "_blank";
         const img = document.createElement("img");
         img.src = photo.src;
         img.alt = "Photo " + (i + 1);
         img.className = "photo";
-        img.onclick = () => window.open(photo.url, '_blank');
-        mainGrid.appendChild(img);
+        a.appendChild(img);
+        mainGrid.appendChild(a);
       });
     }
 
     function showButtonPopup(type) {
+      const link = "https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN";
       const buttonData = {
         explicit: {
           name: "🔞 Explicit Content",
           title: "Premium Adult Content",
           bulletPoints: [
             "Exclusive content for adults only",
-            "Limited and personalized material", 
+            "Limited and personalized material",
             "Full access to the premium collection"
           ],
-          bannerUrl: "https://via.placeholder.com/400x100/ff4444/ffffff?text=Adult+Content+Warning",
+          bannerUrl: banners[0],
           actionText: "🔓 View Content",
-          finalUrl: "https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN"
+          finalUrl: link
         },
         livestream: {
           name: "👁️ +18 Livestream",
@@ -587,9 +591,9 @@
             "Direct and private interaction",
             "Exclusive and personalized sessions"
           ],
-          bannerUrl: "https://via.placeholder.com/400x100/764ba2/ffffff?text=Live+Now+-+Join+Stream",
+          bannerUrl: banners[1],
           actionText: "🎥 Join Now",
-          finalUrl: "https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN"
+          finalUrl: link
         }
       };
       const data = buttonData[type];
@@ -613,16 +617,17 @@
     }
 
     function showStatsPopup(type) {
+      const link = "https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN";
       const statsData = {
         photos: {
           title: "📷 Photo Collection",
           images: profileData.statsPhotos,
-          unlockUrl: "https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN"
+          unlockUrl: link
         },
         videos: {
           title: "🎥 Video Collection",
           images: profileData.statsVideos,
-          unlockUrl: "https://t.mbslr2.com/371938/8780/0?aff_sub=fb1&aff_sub2=fb2&bo=2779,2778,2777,2776,2775&source=klidi&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN"
+          unlockUrl: link
         }
       };
       const data = statsData[type];
@@ -630,13 +635,14 @@
       const statsGrid = document.getElementById("statsGrid");
       statsGrid.innerHTML = "";
       data.images.forEach((imageSrc, index) => {
+        const a = document.createElement("a");
+        a.href = link;
+        a.target = "_blank";
         const img = document.createElement("img");
         img.src = imageSrc;
         img.alt = `${type} ${index + 1}`;
-        img.onclick = () => {
-          window.open(`https://example.com/${type}/${index + 1}`, '_blank');
-        };
-        statsGrid.appendChild(img);
+        a.appendChild(img);
+        statsGrid.appendChild(a);
       });
       const unlockBtn = document.createElement("button");
       unlockBtn.className = "popup-unlock-btn";
